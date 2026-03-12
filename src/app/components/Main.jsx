@@ -20,7 +20,7 @@ export default function Main() {
   const statsRef = useRef(null);
 
   const carouselSlides = [
-    { title: "India's Most Trusted Fast & Express Logistics Network", subtitle: "We provide secure, time-bound and technology-driven transportation solutions across India to ensure your shipments reach safely and on schedule.", image: "/images/123.png" },
+    { title: "India's Most Trusted Fast & Express Logistics Network", subtitle: "We provide secure, time-bound and technology-driven transportation solutions across India to ensure your shipments reach safely and on schedule.", image: "/images/36.png" },
     { title: "Lightning Fast Express Delivery Services Across Cities", subtitle: "From same-day dispatch to urgent express shipments, we guarantee speed, reliability and real-time tracking for every delivery.", image: "/images/142.png" },
     { title: "Complete End-to-End Supply Chain & Freight Management", subtitle: "Comprehensive logistics solutions including pickup scheduling, warehousing, distribution and last-mile delivery tailored for your business growth.", image: "/images/119.png" },
   ];
@@ -577,7 +577,7 @@ export default function Main() {
         <div className="wwd-layout">
           {/* Left image */}
           <motion.div className="wwd-img-col" initial={{ x:-80,opacity:0 }} whileInView={{ x:0,opacity:1 }} transition={{ duration:.8 }} viewport={{ once:true }}
-            style={{ position:"relative", height:420, borderRadius:28, overflow:"hidden", boxShadow:"0 24px 60px rgba(0,0,0,.1)" }}>
+            style={{ position:"relative", height:350, borderRadius:28, overflow:"hidden", boxShadow:"0 24px 60px rgba(0,0,0,.1)" }}>
             <div style={{ position:"absolute", inset:0, background:"linear-gradient(135deg,rgba(255,107,43,.06),rgba(31,78,140,.06))" }} />
             <Image src="/images/116.png" alt="ParcelSetu logistics network" fill style={{ objectFit:"cover" }} />
           </motion.div>

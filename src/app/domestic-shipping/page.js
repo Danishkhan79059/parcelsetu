@@ -160,7 +160,7 @@ export default function DomesticShipping() {
         <div className="hero-grid" />
         {/* GIF subtle overlay */}
         <div style={{ position:'absolute',inset:0,opacity:.16,pointerEvents:'none' }}>
-          <Image src="/images/domestic.gif" alt="" fill style={{ objectFit:'cover' }} unoptimized />
+          <Image src="/images/b2c.gif" alt="" fill style={{ objectFit:'cover' }} unoptimized />
         </div>
         <div className="orb" style={{ width:500,height:500,background:'radial-gradient(circle,rgba(255,107,43,.2) 0%,transparent 70%)',top:-200,right:-80 }} />
         <div className="orb" style={{ width:350,height:350,background:'radial-gradient(circle,rgba(31,78,140,.35) 0%,transparent 70%)',bottom:-120,left:-60 }} />

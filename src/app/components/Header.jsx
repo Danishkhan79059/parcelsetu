@@ -277,7 +277,7 @@ export default function Header() {
 
         {/* Header */}
         <div style={{ padding: '20px 28px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-          <Image src="/images/company.jpeg" alt="ParcelSetu" width={140} height={48}
+          <Image src="/images/logo.png" alt="ParcelSetu" width={140} height={48}
             style={{ height: 40, width: 'auto', objectFit: 'contain', filter: 'brightness(1.2)' }} />
           <button onClick={() => setIsMenuOpen(false)}
             style={{ width: 40, height: 40, borderRadius: 12, border: 'none', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
