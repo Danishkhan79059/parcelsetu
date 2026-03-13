@@ -1,38 +1,50 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { usePathname } from 'next/navigation'
-import { ChevronDown, X, Menu } from 'lucide-react'
-import { theme } from '@/app/constants/theme'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { ChevronDown, X, Menu } from "lucide-react";
+import { theme } from "@/app/constants/theme";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isServicesOpen, setIsServicesOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navLinks = [
-    { name: 'About Us', href: '/aboutus' },
-    { name: 'Carriers', href: '/carriers' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact Us', href: '/contactus' },
-  ]
+    { name: "About Us", href: "/aboutus" },
+    { name: "Carriers", href: "/carriers" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Contact Us", href: "/contactus" },
+  ];
 
   const serviceLinks = [
-    { name: '📦 All Services', href: '/services', desc: 'Explore our full range' },
-    { name: '🏢 B2B Shipping', href: '/b2b-shipping', desc: 'Business to business' },
-    { name: '🚚 Domestic Shipping', href: '/domestic-shipping', desc: 'Across India' },
-  ]
+    {
+      name: "📦 All Services",
+      href: "/services",
+      desc: "Explore our full range",
+    },
+    {
+      name: "🏢 B2B Shipping",
+      href: "/b2b-shipping",
+      desc: "Business to business",
+    },
+    {
+      name: "🚚 Domestic Shipping",
+      href: "/domestic-shipping",
+      desc: "Across India",
+    },
+  ];
 
-  const isActive = (href) => pathname === href
+  const isActive = (href) => pathname === href;
 
   return (
     <>
@@ -162,7 +174,7 @@ export default function Header() {
           transform: translateX(100%);
           transition: transform .35s cubic-bezier(.4,0,.2,1);
         }
-        .mob-menu.open { transform: translateX(0); }
+        .mob-menu.open { transform: translateX(0);overflow: hidden }
         .mob-link {
           display: flex; align-items: center; justify-content: space-between;
           font-size: 18px; font-weight: 700; color: rgba(255,255,255,.85);
@@ -202,26 +214,31 @@ export default function Header() {
         .mob-overlay.open { opacity: 1; pointer-events: all; }
       `}</style>
 
-      <div className={`hdr-root${scrolled ? ' scrolled' : ''}`}>
+      <div className={`hdr-root${scrolled ? " scrolled" : ""}`}>
         <div className="hdr-inner">
           <div className="hdr-wrap">
-
             {/* ── LOGO ──────────────────────────────────────────────────── */}
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+            <Link
+              href="/"
+              style={{ display: "flex", alignItems: "center", flexShrink: 0 }}
+            >
               <Image
                 src="/images/logo.png"
                 alt="ParcelSetu"
-                width={420} height={80}
-                style={{ height: 140, width: 'auto', objectFit: 'contain' }}
+                width={420}
+                height={80}
+                style={{ height: 140, width: "auto", objectFit: "contain" }}
                 priority
               />
             </Link>
 
             {/* ── DESKTOP NAV ───────────────────────────────────────────── */}
-            <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-
+            <div
+              className="desktop-nav"
+              style={{ display: "flex", alignItems: "center", gap: 32 }}
+            >
               {/* Services dropdown */}
-              <div className="svc-group" style={{ position: 'relative' }}>
+              <div className="svc-group" style={{ position: "relative" }}>
                 <Link href="/services" className="svc-trigger">
                   Services
                   <ChevronDown size={15} className="svc-chevron" />
@@ -238,16 +255,31 @@ export default function Header() {
                 </div>
               </div>
 
-              {navLinks.map(l => (
-                <Link key={l.name} href={l.href} className={`nav-link${isActive(l.href) ? ' active' : ''}`}>
+              {navLinks.map((l) => (
+                <Link
+                  key={l.name}
+                  href={l.href}
+                  className={`nav-link${isActive(l.href) ? " active" : ""}`}
+                >
                   {l.name}
                 </Link>
               ))}
 
               {/* Divider */}
-              <div style={{ width: 1, height: 22, background: '#E5E7EB', flexShrink: 0 }}></div>
+              <div
+                style={{
+                  width: 1,
+                  height: 22,
+                  background: "#E5E7EB",
+                  flexShrink: 0,
+                }}
+              ></div>
 
-              <Link href="https://app.parcelsetu.com" target="_blank" className="login-link">
+              <Link
+                href="https://app.parcelsetu.in"
+                target="_blank"
+                className="login-link"
+              >
                 Login
               </Link>
 
@@ -259,7 +291,7 @@ export default function Header() {
             {/* ── MOBILE HAMBURGER ──────────────────────────────────────── */}
             <button
               className="hbg-btn"
-              style={{ display: 'flex' }}
+              style={{ display: "flex" }}
               onClick={() => setIsMenuOpen(true)}
               aria-label="Open menu"
             >
@@ -270,76 +302,199 @@ export default function Header() {
       </div>
 
       {/* ── MOBILE OVERLAY ────────────────────────────────────────────────── */}
-      <div className={`mob-overlay${isMenuOpen ? ' open' : ''}`} onClick={() => setIsMenuOpen(false)}></div>
+      <div
+        className={`mob-overlay${isMenuOpen ? " open" : ""}`}
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
 
       {/* ── MOBILE MENU ───────────────────────────────────────────────────── */}
-      <div className={`mob-menu${isMenuOpen ? ' open' : ''}`}>
-
+      <div className={`mob-menu${isMenuOpen ? " open" : ""}`}>
         {/* Header */}
-        <div style={{ padding: '20px 28px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-          <Image src="/images/logo.png" alt="ParcelSetu" width={140} height={48}
-            style={{ height: 40, width: 'auto', objectFit: 'contain', filter: 'brightness(1.2)' }} />
-          <button onClick={() => setIsMenuOpen(false)}
-            style={{ width: 40, height: 40, borderRadius: 12, border: 'none', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.8)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+        <div
+          style={{
+            padding: "20px 28px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            borderBottom: "1px solid rgba(255,255,255,.08)",
+          }}
+        >
+          <Image
+            src="/images/logo.png"
+            alt="ParcelSetu"
+            width={140}
+            height={48}
+            style={{
+              height: 40,
+              width: "auto",
+              objectFit: "contain",
+              filter: "brightness(1.2)",
+            }}
+          />
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 12,
+              border: "none",
+              background: "rgba(255,255,255,.08)",
+              color: "rgba(255,255,255,.8)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+          >
             <X size={20} />
           </button>
         </div>
 
         {/* Links */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '8px 28px 40px' }}>
-
+        <div style={{ flex: 1, overflowY: "auto", padding: "8px 28px 40px" }}>
           {/* Services accordion */}
-          <button onClick={() => setIsServicesOpen(!isServicesOpen)}
-            style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer', padding: 0, textAlign: 'left' }}>
-            <div className="mob-link" style={{ color: isServicesOpen ? '#FF6B2B' : 'rgba(255,255,255,.85)' }}>
+          <button
+            onClick={() => setIsServicesOpen(!isServicesOpen)}
+            style={{
+              width: "100%",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
+              textAlign: "left",
+            }}
+          >
+            <div
+              className="mob-link"
+              style={{
+                color: isServicesOpen ? "#FF6B2B" : "rgba(255,255,255,.85)",
+              }}
+            >
               Services
-              <ChevronDown size={18} style={{ transition: 'transform .3s', transform: isServicesOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
+              <ChevronDown
+                size={18}
+                style={{
+                  transition: "transform .3s",
+                  transform: isServicesOpen ? "rotate(180deg)" : "rotate(0)",
+                }}
+              />
             </div>
           </button>
 
           {isServicesOpen && (
             <div style={{ marginBottom: 8 }}>
               {serviceLinks.map((s, i) => (
-                <Link key={i} href={s.href} className="mob-sub-link" onClick={() => setIsMenuOpen(false)}>
+                <Link
+                  key={i}
+                  href={s.href}
+                  className="mob-sub-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   {s.name}
                 </Link>
               ))}
             </div>
           )}
 
-          {navLinks.map(l => (
-            <Link key={l.name} href={l.href} className={`mob-link${isActive(l.href) ? ' active' : ''}`}
-              onClick={() => setIsMenuOpen(false)}>
+          {navLinks.map((l) => (
+            <Link
+              key={l.name}
+              href={l.href}
+              className={`mob-link${isActive(l.href) ? " active" : ""}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               {l.name}
-              <span style={{ fontSize: 18, color: 'rgba(255,255,255,.2)' }}>›</span>
+              <span style={{ fontSize: 18, color: "rgba(255,255,255,.2)" }}>
+                ›
+              </span>
             </Link>
           ))}
 
-          <Link href="https://app.parcelsetu.com" target="_blank"
-            className="mob-link" onClick={() => setIsMenuOpen(false)}>
+          <Link
+            href="https://app.parcelsetu.in"
+            target="_blank"
+            className="mob-link"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Login
-            <span style={{ fontSize: 18, color: 'rgba(255,255,255,.2)' }}>›</span>
+            <span style={{ fontSize: 18, color: "rgba(255,255,255,.2)" }}>
+              ›
+            </span>
           </Link>
 
           {/* Track CTA */}
           <div style={{ paddingTop: 24 }}>
-            <Link href="/track" onClick={() => setIsMenuOpen(false)}
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, background: 'linear-gradient(135deg,#FF6B2B,#e55a1c)', color: 'white', padding: '16px 24px', borderRadius: 16, fontSize: 16, fontWeight: 800, textDecoration: 'none', boxShadow: '0 10px 30px rgba(255,107,43,.35)' }}>
+            <Link
+              href="/track"
+              onClick={() => setIsMenuOpen(false)}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 10,
+                background: "linear-gradient(135deg,#FF6B2B,#e55a1c)",
+                color: "white",
+                padding: "16px 24px",
+                borderRadius: 16,
+                fontSize: 16,
+                fontWeight: 800,
+                textDecoration: "none",
+                boxShadow: "0 10px 30px rgba(255,107,43,.35)",
+              }}
+            >
               📦 Track Shipment
             </Link>
           </div>
 
           {/* Social links */}
-          <div style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,.07)' }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,107,43,.7)', textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 14 }}>Follow Us</p>
-            <div style={{ display: 'flex', gap: 12 }}>
+          <div
+            style={{
+              marginTop: 32,
+              paddingTop: 24,
+              borderTop: "1px solid rgba(255,255,255,.07)",
+            }}
+          >
+            <p
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                color: "rgba(255,107,43,.7)",
+                textTransform: "uppercase",
+                letterSpacing: ".1em",
+                marginBottom: 14,
+              }}
+            >
+              Follow Us
+            </p>
+            <div style={{ display: "flex", gap: 12 }}>
               {[
-                { label: 'LinkedIn', href: 'https://www.linkedin.com/company/parcelsetu/', color: '#0077B5' },
-                { label: 'Instagram', href: '#', color: '#E1306C' },
-                { label: 'Facebook', href: '#', color: '#1877F2' },
+                {
+                  label: "LinkedIn",
+                  href: "https://www.linkedin.com/company/parcelsetu/",
+                  color: "#0077B5",
+                },
+                { label: "Instagram", href: "#", color: "#E1306C" },
+                { label: "Facebook", href: "#", color: "#1877F2" },
               ].map((s, i) => (
-                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
-                  style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(255,255,255,.07)', color: 'rgba(255,255,255,.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontSize: 13, fontWeight: 700 }}>
+                <a
+                  key={i}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: 10,
+                    background: "rgba(255,255,255,.07)",
+                    color: "rgba(255,255,255,.6)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textDecoration: "none",
+                    fontSize: 13,
+                    fontWeight: 700,
+                  }}
+                >
                   {s.label[0]}
                 </a>
               ))}
@@ -348,11 +503,35 @@ export default function Header() {
         </div>
 
         {/* Bottom contact strip */}
-        <div style={{ padding: '16px 28px', borderTop: '1px solid rgba(255,255,255,.07)', background: 'rgba(0,0,0,.2)' }}>
-          <p style={{ fontSize: 12, color: 'rgba(255,255,255,.35)', marginBottom: 4 }}>Need help?</p>
-          <a href="tel:+919990746208" style={{ fontSize: 15, fontWeight: 700, color: '#FF6B2B', textDecoration: 'none' }}>+91-9990746208</a>
+        <div
+          style={{
+            padding: "16px 28px",
+            borderTop: "1px solid rgba(255,255,255,.07)",
+            background: "rgba(0,0,0,.2)",
+          }}
+        >
+          <p
+            style={{
+              fontSize: 12,
+              color: "rgba(255,255,255,.35)",
+              marginBottom: 4,
+            }}
+          >
+            Need help?
+          </p>
+          <a
+            href="tel:+919990746208"
+            style={{
+              fontSize: 15,
+              fontWeight: 700,
+              color: "#FF6B2B",
+              textDecoration: "none",
+            }}
+          >
+            +91-9990746208
+          </a>
         </div>
       </div>
     </>
-  )
+  );
 }

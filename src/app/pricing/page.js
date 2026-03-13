@@ -1,70 +1,78 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { theme } from '@/app/constants/theme'
+import Link from "next/link";
+import { theme } from "@/app/constants/theme";
 
 const plans = [
   {
-    name: 'Lite',
-    badge: 'Starter',
-    emoji: '🌱',
-    description: 'Perfect for new and growing sellers who want reliable shipping support without fixed commitments.',
-    price: '₹26',
-    unit: '/500 gms*',
+    name: "Lite",
+    badge: "Starter",
+    emoji: "🌱",
+    description:
+      "Perfect for new and growing sellers who want reliable shipping support without fixed commitments.",
+    price: "₹26",
+    unit: "/500 gms*",
     highlight: false,
-    buttonLabel: 'Create an account',
-    buttonHref: 'https://app.parcelsetu.com',
+    buttonLabel: "Create an account",
+    buttonHref: "https://app.parcelsetu.com",
     popular: false,
     features: [
-      'Single ecommerce / marketplace channel integration',
-      'Domestic surface & air shipping across major pincodes',
-      'Basic NDR & RTO management via dashboard',
-      'Email & chat support during business hours',
+      "Single ecommerce / marketplace channel integration",
+      "Domestic surface & air shipping across major pincodes",
+      "Basic NDR & RTO management via dashboard",
+      "Email & chat support during business hours",
     ],
   },
   {
-    name: 'Professional',
-    badge: 'Best for Ecommerce Brands',
-    emoji: '🚀',
-    description: 'Ideal for D2C & marketplace brands that want lower per‑shipment cost, automation and stronger control on logistics.',
-    price: '₹20',
-    unit: '/500 gms*',
+    name: "Professional",
+    badge: "Best for Ecommerce Brands",
+    emoji: "🚀",
+    description:
+      "Ideal for D2C & marketplace brands that want lower per‑shipment cost, automation and stronger control on logistics.",
+    price: "₹20",
+    unit: "/500 gms*",
     highlight: true,
-    buttonLabel: 'Start with Professional',
-    buttonHref: 'https://app.parcelsetu.com',
+    buttonLabel: "Start with Professional",
+    buttonHref: "https://app.parcelsetu.com",
     popular: true,
     features: [
-      'Plug‑and‑play integration with top ecommerce & marketplace channels',
-      'Smart courier selection based on speed, cost & performance',
-      'Priority support with dedicated logistics success manager',
-      'Automated NDR communication, RTO control & exception handling',
-      'Branded tracking page, notifications & post‑delivery experience',
+      "Plug‑and‑play integration with top ecommerce & marketplace channels",
+      "Smart courier selection based on speed, cost & performance",
+      "Priority support with dedicated logistics success manager",
+      "Automated NDR communication, RTO control & exception handling",
+      "Branded tracking page, notifications & post‑delivery experience",
     ],
   },
   {
-    name: 'Enterprise',
-    badge: 'Shipping Solution',
-    emoji: '🏢',
-    description: 'Custom-built shipping programs for high-volume shippers, 3PLs and large enterprises.',
+    name: "Enterprise",
+    badge: "Shipping Solution",
+    emoji: "🏢",
+    description:
+      "Custom-built shipping programs for high-volume shippers, 3PLs and large enterprises.",
     price: "Let's talk",
-    unit: 'for a custom quote',
+    unit: "for a custom quote",
     highlight: false,
-    buttonLabel: 'Contact sales',
-    buttonHref: '/contactus',
+    buttonLabel: "Contact sales",
+    buttonHref: "/contactus",
     popular: false,
     features: [
-      'Pan‑India multi-warehouse & multi-origin support',
-      'Dedicated key account manager & operations team',
-      'Custom pricing slabs & credit terms as per volume',
-      'API-first integrations with ERP, WMS & OMS systems',
-      'Custom analytics, SLA reporting & governance reviews',
+      "Pan‑India multi-warehouse & multi-origin support",
+      "Dedicated key account manager & operations team",
+      "Custom pricing slabs & credit terms as per volume",
+      "API-first integrations with ERP, WMS & OMS systems",
+      "Custom analytics, SLA reporting & governance reviews",
     ],
   },
-]
+];
 
 export default function PricingPage() {
   return (
-    <div style={{ minHeight: '100vh', fontFamily: "'Outfit','Segoe UI',sans-serif" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        fontFamily: "'Outfit','Segoe UI',sans-serif",
+      }}
+    >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
         * { box-sizing: border-box; }
@@ -220,27 +228,78 @@ export default function PricingPage() {
 
       <div className="page-bg">
         <div className="page-grid" />
-        <div className="orb" style={{ width:600,height:600,background:'radial-gradient(circle,rgba(255,107,43,.12) 0%,transparent 70%)',top:-250,right:-150 }} />
-        <div className="orb" style={{ width:500,height:500,background:'radial-gradient(circle,rgba(31,78,140,.2) 0%,transparent 70%)',bottom:-200,left:-100 }} />
+        <div
+          className="orb"
+          style={{
+            width: 600,
+            height: 600,
+            background:
+              "radial-gradient(circle,rgba(255,107,43,.12) 0%,transparent 70%)",
+            top: -250,
+            right: -150,
+          }}
+        />
+        <div
+          className="orb"
+          style={{
+            width: 500,
+            height: 500,
+            background:
+              "radial-gradient(circle,rgba(31,78,140,.2) 0%,transparent 70%)",
+            bottom: -200,
+            left: -100,
+          }}
+        />
 
-        <div style={{ position:'relative',zIndex:1 }}>
-
+        <div style={{ position: "relative", zIndex: 1 }}>
           {/* ── Hero ── */}
-          <div style={{ textAlign:'center',marginBottom:60 }}>
-            <div className="badge-pill" style={{ margin:'0 auto 20px' }}>💰 Simple Pricing</div>
-            <h1 style={{ fontSize:'clamp(28px,5vw,56px)',fontWeight:900,color:'white',lineHeight:1.1,marginBottom:16 }}>
-              Choose the right{' '}
-              <span style={{ background:'linear-gradient(90deg,#FF6B2B,#FFD700)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent' }}>
+          <div style={{ textAlign: "center", marginBottom: 60 }}>
+            <div className="badge-pill" style={{ margin: "0 auto 20px" }}>
+              💰 Simple Pricing
+            </div>
+            <h1
+              style={{
+                fontSize: "clamp(28px,5vw,56px)",
+                fontWeight: 900,
+                color: "white",
+                lineHeight: 1.1,
+                marginBottom: 16,
+              }}
+            >
+              Choose the right{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg,#FF6B2B,#FFD700)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 ParcelSetu
-              </span>{' '}
+              </span>{" "}
               plan
             </h1>
-            <p style={{ fontSize:'clamp(14px,2vw,17px)',color:'rgba(255,255,255,.65)',maxWidth:540,margin:'0 auto 12px',lineHeight:1.8 }}>
-              Start with flexible pay‑as‑you‑ship plans and scale into enterprise‑grade logistics
-              without changing your platform or tools.
+            <p
+              style={{
+                fontSize: "clamp(14px,2vw,17px)",
+                color: "rgba(255,255,255,.65)",
+                maxWidth: 540,
+                margin: "0 auto 12px",
+                lineHeight: 1.8,
+              }}
+            >
+              Start with flexible pay‑as‑you‑ship plans and scale into
+              enterprise‑grade logistics without changing your platform or
+              tools.
             </p>
-            <p style={{ fontSize:12,color:'rgba(255,255,255,.35)',marginTop:8 }}>
-              *Illustrative base rate for metro‑to‑metro shipping. Final pricing may vary by lane, service type and volume.
+            <p
+              style={{
+                fontSize: 12,
+                color: "rgba(255,255,255,.35)",
+                marginTop: 8,
+              }}
+            >
+              *Illustrative base rate for metro‑to‑metro shipping. Final pricing
+              may vary by lane, service type and volume.
             </p>
             <div className="sdivider" />
           </div>
@@ -248,65 +307,216 @@ export default function PricingPage() {
           {/* ── Cards ── */}
           <div className="cards-grid">
             {plans.map((plan) => (
-              <div key={plan.name} className={`plan-card${plan.highlight ? ' featured' : ''}`}>
-
+              <div
+                key={plan.name}
+                className={`plan-card${plan.highlight ? " featured" : ""}`}
+              >
                 {plan.popular && (
                   <div className="popular-ribbon">⭐ Most Popular</div>
                 )}
 
                 {/* Header */}
                 {plan.highlight ? (
-                  <div className="card-header-featured" style={{ paddingTop: plan.popular ? 48 : 36 }}>
-                    <div style={{ position:'relative',zIndex:1 }}>
-                      <div style={{ fontSize:11,fontWeight:800,color:'rgba(255,107,43,.9)',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:8 }}>
+                  <div
+                    className="card-header-featured"
+                    style={{ paddingTop: plan.popular ? 48 : 36 }}
+                  >
+                    <div style={{ position: "relative", zIndex: 1 }}>
+                      <div
+                        style={{
+                          fontSize: 11,
+                          fontWeight: 800,
+                          color: "rgba(255,107,43,.9)",
+                          textTransform: "uppercase",
+                          letterSpacing: ".1em",
+                          marginBottom: 8,
+                        }}
+                      >
                         {plan.badge}
                       </div>
-                      <div style={{ display:'flex',alignItems:'center',gap:12,marginBottom:10 }}>
-                        <span style={{ fontSize:32 }}>{plan.emoji}</span>
-                        <h2 style={{ fontSize:26,fontWeight:900,color:'white' }}>{plan.name}</h2>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 12,
+                          marginBottom: 10,
+                        }}
+                      >
+                        <span style={{ fontSize: 32 }}>{plan.emoji}</span>
+                        <h2
+                          style={{
+                            fontSize: 26,
+                            fontWeight: 900,
+                            color: "white",
+                          }}
+                        >
+                          {plan.name}
+                        </h2>
                       </div>
-                      <p style={{ fontSize:13,color:'rgba(255,255,255,.7)',lineHeight:1.7,marginBottom:20 }}>{plan.description}</p>
-                      <div style={{ display:'flex',alignItems:'baseline',gap:6 }}>
-                        <span style={{ fontSize:36,fontWeight:900,color:'white' }}>{plan.price}</span>
-                        <span style={{ fontSize:14,color:'rgba(255,255,255,.55)',fontWeight:600 }}>{plan.unit}</span>
+                      <p
+                        style={{
+                          fontSize: 13,
+                          color: "rgba(255,255,255,.7)",
+                          lineHeight: 1.7,
+                          marginBottom: 20,
+                        }}
+                      >
+                        {plan.description}
+                      </p>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "baseline",
+                          gap: 6,
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontSize: 36,
+                            fontWeight: 900,
+                            color: "white",
+                          }}
+                        >
+                          {plan.price}
+                        </span>
+                        <span
+                          style={{
+                            fontSize: 14,
+                            color: "rgba(255,255,255,.55)",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {plan.unit}
+                        </span>
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <div className="card-header-dark" style={{ paddingTop: plan.popular ? 48 : 36 }}>
-                    <div style={{ fontSize:11,fontWeight:800,color:'rgba(255,107,43,.8)',textTransform:'uppercase',letterSpacing:'.1em',marginBottom:8 }}>
+                  <div
+                    className="card-header-dark"
+                    style={{ paddingTop: plan.popular ? 48 : 36 }}
+                  >
+                    <div
+                      style={{
+                        fontSize: 11,
+                        fontWeight: 800,
+                        color: "rgba(255,107,43,.8)",
+                        textTransform: "uppercase",
+                        letterSpacing: ".1em",
+                        marginBottom: 8,
+                      }}
+                    >
                       {plan.badge}
                     </div>
-                    <div style={{ display:'flex',alignItems:'center',gap:12,marginBottom:10 }}>
-                      <span style={{ fontSize:32 }}>{plan.emoji}</span>
-                      <h2 style={{ fontSize:24,fontWeight:900,color:'white' }}>{plan.name}</h2>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 12,
+                        marginBottom: 10,
+                      }}
+                    >
+                      <span style={{ fontSize: 32 }}>{plan.emoji}</span>
+                      <h2
+                        style={{
+                          fontSize: 24,
+                          fontWeight: 900,
+                          color: "white",
+                        }}
+                      >
+                        {plan.name}
+                      </h2>
                     </div>
-                    <p style={{ fontSize:13,color:'rgba(255,255,255,.55)',lineHeight:1.7,marginBottom:20 }}>{plan.description}</p>
-                    <div style={{ display:'flex',alignItems:'baseline',gap:6 }}>
-                      <span style={{ fontSize:plan.price.length>4?22:34,fontWeight:900,color:'white' }}>{plan.price}</span>
-                      <span style={{ fontSize:13,color:'rgba(255,255,255,.4)',fontWeight:600 }}>{plan.unit}</span>
+                    <p
+                      style={{
+                        fontSize: 13,
+                        color: "rgba(255,255,255,.55)",
+                        lineHeight: 1.7,
+                        marginBottom: 20,
+                      }}
+                    >
+                      {plan.description}
+                    </p>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "baseline",
+                        gap: 6,
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: plan.price.length > 4 ? 22 : 34,
+                          fontWeight: 900,
+                          color: "white",
+                        }}
+                      >
+                        {plan.price}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: 13,
+                          color: "rgba(255,255,255,.4)",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {plan.unit}
+                      </span>
                     </div>
                   </div>
                 )}
 
                 {/* Body */}
                 <div className="card-body">
-                  <ul style={{ listStyle:'none',padding:0,margin:'0 0 28px',flex:1 }}>
-                    {plan.features.map((f,i) => (
-                      <li key={i} className={`feat-item${plan.highlight?' dark-text':''}`}>
-                        <div className={plan.highlight ? 'feat-check-featured' : 'feat-check-dark'}>✓</div>
+                  <ul
+                    style={{
+                      listStyle: "none",
+                      padding: 0,
+                      margin: "0 0 28px",
+                      flex: 1,
+                    }}
+                  >
+                    {plan.features.map((f, i) => (
+                      <li
+                        key={i}
+                        className={`feat-item${plan.highlight ? " dark-text" : ""}`}
+                      >
+                        <div
+                          className={
+                            plan.highlight
+                              ? "feat-check-featured"
+                              : "feat-check-dark"
+                          }
+                        >
+                          ✓
+                        </div>
                         <span>{f}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div style={{ marginTop:'auto' }}>
-                    <Link href={plan.buttonHref}
-                      className={plan.highlight ? 'btn-orange' : plan.name==='Enterprise' ? 'btn-ghost-dark' : 'btn-ghost-dark'}>
-                      {plan.buttonLabel} {plan.highlight ? '→' : ''}
+                  <div style={{ marginTop: "auto" }}>
+                    <Link
+                      href={plan.buttonHref}
+                      className={
+                        plan.highlight
+                          ? "btn-orange"
+                          : plan.name === "Enterprise"
+                            ? "btn-ghost-dark"
+                            : "btn-ghost-dark"
+                      }
+                    >
+                      {plan.buttonLabel} {plan.highlight ? "→" : ""}
                     </Link>
                     {plan.highlight && (
-                      <p style={{ marginTop:10,fontSize:11,color:'#9CA3AF',textAlign:'center' }}>
+                      <p
+                        style={{
+                          marginTop: 10,
+                          fontSize: 11,
+                          color: "#9CA3AF",
+                          textAlign: "center",
+                        }}
+                      >
                         Recommended for brands shipping 300+ orders per month
                       </p>
                     )}
@@ -317,18 +527,45 @@ export default function PricingPage() {
           </div>
 
           {/* ── Bottom note ── */}
-          <div style={{ textAlign:'center',marginTop:60,padding:'32px 24px',background:'rgba(255,255,255,.04)',backdropFilter:'blur(12px)',border:'1px solid rgba(255,255,255,.08)',borderRadius:20,maxWidth:700,margin:'60px auto 0' }}>
-            <div style={{ fontSize:13,color:'rgba(255,255,255,.5)',lineHeight:1.8 }}>
-              <span style={{ color:'rgba(255,107,43,.8)',fontWeight:700 }}>Need help choosing?</span>{' '}
-              Talk to our logistics experts and we'll recommend the right plan for your business.{' '}
-              <Link href="/contactus" style={{ color:'#FF6B2B',fontWeight:800,textDecoration:'none' }}>
+          <div
+            style={{
+              textAlign: "center",
+              marginTop: 60,
+              padding: "32px 24px",
+              background: "rgba(255,255,255,.04)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(255,255,255,.08)",
+              borderRadius: 20,
+              maxWidth: 700,
+              margin: "60px auto 0",
+            }}
+          >
+            <div
+              style={{
+                fontSize: 13,
+                color: "rgba(255,255,255,.5)",
+                lineHeight: 1.8,
+              }}
+            >
+              <span style={{ color: "rgba(255,107,43,.8)", fontWeight: 700 }}>
+                Need help choosing?
+              </span>{" "}
+              Talk to our logistics experts and we'll recommend the right plan
+              for your business.{" "}
+              <Link
+                href="/contactus"
+                style={{
+                  color: "#FF6B2B",
+                  fontWeight: 800,
+                  textDecoration: "none",
+                }}
+              >
                 Contact us →
               </Link>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-  )
+  );
 }
