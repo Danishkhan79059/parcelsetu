@@ -95,7 +95,7 @@ export default function Contactus() {
           content: '';
           position: absolute;
           inset: 0;
-          background: url(/images/banner.png) center/cover no-repeat;
+          background: url() center/cover no-repeat;
           opacity: 0.12;
         }
         .hero-grid {

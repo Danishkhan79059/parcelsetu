@@ -170,7 +170,7 @@ export default function Track() {
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
         .hero-bg { background:linear-gradient(135deg,#0F1C35 0%,#1F4E8C 60%,#1a3a6e 100%); position:relative; overflow:hidden; }
-        .hero-bg::before { content:''; position:absolute; inset:0; background:url(/images/banner.png) center/cover no-repeat; opacity:.12; }
+        .hero-bg::before { content:''; position:absolute; inset:0; background:url() center/cover no-repeat; opacity:.12; }
         .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px); background-size:48px 48px; }
         .orb { position:absolute; border-radius:50%; pointer-events:none; }
         .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,107,43,.13); color:#FF6B2B; padding:8px 20px; border-radius:100px; font-size:13px; font-weight:700; border:1px solid rgba(255,107,43,.28); }

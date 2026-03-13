@@ -174,7 +174,7 @@ export default function Aboutus() {
         }
         .hero-bg::before {
           content:''; position:absolute; inset:0;
-          background:url(/images/banner.png) center/cover no-repeat; opacity:.12;
+          background:url() center/cover no-repeat; opacity:.12;
         }
         .hero-grid {
           position:absolute; inset:0;
@@ -408,7 +408,7 @@ export default function Aboutus() {
           >
             <div className="story-img" style={{ height: 420 }}>
               <Image
-                src="/images/0.png"
+                src="/images/logo.png"
                 alt="ParcelSetu Story"
                 fill
                 className="object-cover"
@@ -489,7 +489,7 @@ export default function Aboutus() {
             </div>
             <div className="story-img" style={{ height: 420 }}>
               <Image
-                src="/images/0.png"
+                src="/images/logo.png"
                 alt="ParcelSetu Founding"
                 fill
                 className="object-cover"
@@ -527,7 +527,7 @@ export default function Aboutus() {
               <div key={i} className="founder-card">
                 <div className="avatar-ring">
                   <Image
-                    src="/images/0.png"
+                    src="/images/logo.png"
                     alt={f.name}
                     fill
                     className="object-cover"
@@ -600,7 +600,7 @@ export default function Aboutus() {
               <div key={i} className="leader-card">
                 <div className="leader-avatar" style={{ position: "relative" }}>
                   <Image
-                    src="/images/0.png"
+                    src="/images/logo.png"
                     alt={l.name}
                     fill
                     className="object-cover"
@@ -804,7 +804,7 @@ export default function Aboutus() {
               </div>
               <div className="story-img" style={{ height: 380 }}>
                 <Image
-                  src="/images/0.png"
+                  src="/images/logo.png"
                   alt={`ParcelSetu ${selectedYear}`}
                   fill
                   className="object-cover"

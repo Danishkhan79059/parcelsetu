@@ -221,7 +221,7 @@ export default function Carriers() {
           content: '';
           position: absolute;
           inset: 0;
-          background: url(/images/banner.png) center/cover no-repeat;
+          background: url() center/cover no-repeat;
           opacity: 0.15;
         }
         .hero-grid {

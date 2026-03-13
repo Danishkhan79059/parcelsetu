@@ -218,7 +218,7 @@ export default function Services() {
         }
         .hero-bg::before {
           content:''; position:absolute; inset:0;
-          background:url(/images/banner.png) center/cover no-repeat; opacity:.12;
+          background:url() center/cover no-repeat; opacity:.12;
         }
         .hero-grid {
           position:absolute; inset:0;
@@ -697,7 +697,7 @@ export default function Services() {
                   }}
                 >
                   <Image
-                    src="/images/0.png"
+                    src="/images/logo.png"
                     alt={card.title}
                     fill
                     style={{ objectFit: "cover", transition: "transform .5s" }}

@@ -114,7 +114,7 @@ export default function B2BShipping() {
         }
         .hero-bg::before {
           content: ''; position: absolute; inset: 0;
-          background: url(/images/banner.png) center/cover no-repeat; opacity: .1;
+          background: url() center/cover no-repeat; opacity: .1;
         }
         .hero-grid {
           position: absolute; inset: 0;
