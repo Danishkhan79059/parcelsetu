@@ -66,10 +66,10 @@ export default function Track() {
     return isNaN(d)
       ? s
       : d.toLocaleDateString("en-IN", {
-          day: "2-digit",
-          month: "short",
-          year: "numeric",
-        });
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+      });
   };
   const fmtT = (s) => {
     if (!s) return "";
@@ -77,10 +77,10 @@ export default function Track() {
     return isNaN(d)
       ? s.split(" ")[1] || ""
       : d.toLocaleTimeString("en-IN", {
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: true,
-        });
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      });
   };
 
   const handleTrack = async (e) => {

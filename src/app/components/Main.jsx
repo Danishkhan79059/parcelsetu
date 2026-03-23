@@ -1645,7 +1645,7 @@ export default function Main() {
                 transition={{ type: "spring", stiffness: 80 }}
               >
                 <div className="test-card">
-              
+
                   <div style={{ height: 20 }} />
                   {/* Stars */}
                   <div style={{ display: "flex", gap: 3, marginBottom: 16 }}>

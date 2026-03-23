@@ -355,7 +355,7 @@ export default function Footer() {
                     Email
                   </div>
                   <a href="mailto:info@parcelsetu.com" className="">
-                    info@parcelsetu.com
+                    support@parcelsetu.in
                   </a>
                 </div>
               </div>
@@ -418,7 +418,7 @@ export default function Footer() {
 
               <div style={{ marginTop: 20 }}>
                 <a
-                  href="https://app.parcelsetu.com"
+                  href="https://app.parcelsetu.in"
                   target="_blank"
                   className="portal-btn"
                 >

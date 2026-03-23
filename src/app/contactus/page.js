@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { theme } from "@/app/constants/theme";
 
-export default function Contactus() {
+export default function Page() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -62,8 +62,8 @@ export default function Contactus() {
       icon: "📍",
       title: "Office",
       value: "ParcelSetu Logistics Pvt. Ltd.",
-      sub: "City, State – PIN, India",
-      color: "#10B981",
+      sub: "KH No. 661, Dunda Head, Near Crossing Republic, Ghaziabad, Uttar Pradesh - India pincode:201001",
+      color: "##10B981",
       bg: "from-emerald-500 to-green-400",
       href: "#",
     },
@@ -396,7 +396,7 @@ export default function Contactus() {
           >
             {contactCards.map((c, i) => (
               <a key={i} href={c.href} className="contact-card">
-                <div className={`icon-box bg-gradient-to-br ${c.bg}`}>
+                <div className={`icon-box  ${c.bg}`}>
                   {c.icon}
                 </div>
                 <h3
@@ -413,7 +413,7 @@ export default function Contactus() {
                   style={{
                     fontSize: 14,
                     fontWeight: 600,
-                    color: c.color,
+                    color: "#9CA3AF",
                     marginBottom: 4,
                   }}
                 >
