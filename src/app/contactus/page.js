@@ -15,28 +15,45 @@ export default function Page() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
+    setError("");
+    const emptyData = {
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      subject: "",
+      message: "",
+    };
+    try {
+      const res = await fetch("/api/contactus", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Failed to submit");
+      }
+
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          subject: "",
-          message: "",
-        });
+        setFormData(emptyData);
       }, 5000);
-    }, 1500);
+    } catch (err) {
+      setError(err?.message || "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const contactCards = [
@@ -590,6 +607,19 @@ export default function Page() {
                       "🚀 Send Message"
                     )}
                   </button>
+                  {error ? (
+                    <p
+                      style={{
+                        textAlign: "center",
+                        fontSize: 12,
+                        color: "#DC2626",
+                        fontWeight: 700,
+                        marginTop: -6,
+                      }}
+                    >
+                      {error}
+                    </p>
+                  ) : null}
                   <p
                     style={{
                       textAlign: "center",
